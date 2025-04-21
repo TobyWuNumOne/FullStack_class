@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吳令台的履歷</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="./test_html_resume.css">
+</head>
+
+<body>
+    <h2>css選擇器 highlighter</h2>
+    <p>這是一個簡單的 CSS 選擇器高亮顯示範例。</p>
+    <p>請書輸入你的 CSS 選擇器:</p>
+    <input type="text" id="selector" placeholder="輸入 CSS 選擇器">
+    <button onclick="highlightSelector()">高亮</button>
+
+    <script>
+        function highlightSelector() {
+            // 清除之前的高亮
+            const selectors = document.querySelectorAll('.highlight');
+            selectors.forEach((element) => {
+                element.classList.remove('highlight'); // 修正為 element
+            });
+            const selector = document.getElementById("selector").value;//取得使用者輸入的 CSS 選擇器
+            const elements = document.querySelectorAll(selector);
+            elements.forEach((element) => {
+                element.classList.add('highlight'); // 設定背景顏色
+            });
+        }
+    </script>
+
+
+
+
+    
+    <hr />
+    <h1>履歷表</h1>
+    <hr />
+    <section class="container">
+        <h2>個人資料</h2>
+        <p>姓名:吳令台</p>
+        <p>電話:0912345678</p>
+        <p>電子郵件:example@example.com</p>
+        <dl>
+            <dt>e-mail</dt> 
+                <dd><a href="codyloveyoutoo@gmail.com">codyloveyoutoo@gmail.com</a></dd>
+            <dt>github</dt> 
+            <dd><a href="https://github.com/codyloveyoutoo">https://github.com/codyloveyoutoo</a></dd>
+            <dt>instagram</dt>
+            <dd><a href="https://www.instagram.com/taizanthebar/">https://www.instagram.com/taizanthebar/</a></dd>
+        </dl>
+    </section>  
+    <article>
+        <h2>自我介紹</h2>
+        我是一名熱愛程式設計的軟體工程師，擁有多年的開發經驗，熟悉多種程式語言和框架。
+        我喜歡挑戰新技術，並且樂於學習和分享知識。
+        <p>我的興趣包括開源貢獻和參加技術社群活動。</p>
+        <aside>今日事今日畢</aside>
+    </article>
+    <section>
+        <h2>工作經歷</h2>
+        <ul>
+            <li>2020 - 現在:軟體工程師，某科技公司</li>
+            <li>2018 - 2020:前端開發工程師，某網路公司</li>
+        </ul>
+    </section>
+    <footer>
+        <address>
+        For more details, contact
+        <a href="mailto:js@example.com">John Smith</a>.
+        </address>
+        <p><small>© copyright 2038 Example Corp.</small></p>
+    </footer>
+</body>
+
+</html>
