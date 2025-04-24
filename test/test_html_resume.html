@@ -14,13 +14,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+HK:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+HK:wght@100..900&display=swap"
+        rel="stylesheet">
 
 
     <link rel="stylesheet" href="./test_html_resume.css">
 </head>
 
-<section>
+<body>
+    <nav class="navbar">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul class="menu">
+            <li><a href="#">首頁</a></li>
+            <li><a href="#">關於我們</a></li>
+            <li><a href="#">服務</a></li>
+            <li><a href="#">聯絡我們</a></li>
+        </ul>
+    </nav>
+
     <h2>css選擇器 highlighter</h2>
     <p>這是一個簡單的 CSS 選擇器高亮顯示範例。</p>
     <p>請書輸入你的 CSS 選擇器:</p>
@@ -45,7 +63,7 @@
 
 
 
-    
+
     <hr />
     <h1>履歷表</h1>
     <hr />
@@ -55,14 +73,14 @@
         <p>電話:0912345678</p>
         <p>電子郵件:example@example.com</p>
         <dl>
-            <dt>e-mail</dt> 
-                <dd><a href="codyloveyoutoo@gmail.com">codyloveyoutoo@gmail.com</a></dd>
-            <dt>github</dt> 
+            <dt>e-mail</dt>
+            <dd><a href="codyloveyoutoo@gmail.com">codyloveyoutoo@gmail.com</a></dd>
+            <dt>github</dt>
             <dd><a href="https://github.com/codyloveyoutoo">https://github.com/codyloveyoutoo</a></dd>
             <dt>instagram</dt>
             <dd><a href="https://www.instagram.com/taizanthebar/">https://www.instagram.com/taizanthebar/</a></dd>
         </dl>
-    </section>  
+    </section>
 
     <ul class="container_list">
         <li class="container i1">1</li>
@@ -95,8 +113,8 @@
 
     <footer>
         <address>
-        For more details, contact
-        <a href="mailto:js@example.com">John Smith</a>.
+            For more details, contact
+            <a href="mailto:js@example.com">John Smith</a>.
         </address>
         <p><small>© copyright 2038 Example Corp.</small></p>
     </footer>
