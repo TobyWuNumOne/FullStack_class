@@ -1,7 +1,26 @@
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+
 body {
     margin: 0;
-    font-family: sans-serif;
+    padding: 0;
+
+    /* make it look decent enough */
+    background: #292929;
+    color: #040404;
+    font-family: "Avenir Next", "Avenir", sans-serif;
 }
+
+
 
 .logo {
     width: 10px;
@@ -18,95 +37,53 @@ body {
     position: relative;
     background-color: #333;
     padding: 10px 20px;
+    padding-right: 70px;
     justify-content: space-between;
 }
 
-.menu-toggle {
-    display: none;
+.search {
+    width: 30%;
+    position: relative;
+    display: flex;
 }
 
-.menu-icon {
-    display: block;
+.searchTerm {
+    width: 100%;
+    border: 3px solid #1f1f1f;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #040404;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #1f1f1f;
+    background: #1f1f1f;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
-    width: 30px;
-    margin: 0 6px;
+    font-size: 20px;
 }
-
-.menu-icon span {
-    display: block;
-    height: 4px;
-    background: #fff;
-    margin: 6px 0;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    display: none;
-}
-
-.menu li {
-    margin: 10px 0;
-}
-
-.menu li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 0;
-    display: block;
-}
-
-/* 當 checkbox 被勾選時，展開選單 */
-.menu-toggle:checked+.menu-icon+.menu {
-    display: block;
-}
-
-/* 小螢幕適配 */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: none;
+search:before {
+    content: "\f002";
     }
-
-    .menu {
-        display: block;
-        gap: 20px;
-        margin: 0;
-    }
-
-    .menu li {
-        margin: 0;
-    }
-}
-
-
-
-
-main {
-    width: calc(100% - 240px);
-    max-width: 680px;
-    margin: 100px auto;
-}
-
-p {
-    font-size: 18px;
-    line-height: 28px;
-}
-
-* {
-    scroll-behavior: smooth;
-}
-
 /* Menu code starts here */
 
 #menuToggle {
     display: block;
     /* You can also use relative/absolute here if you want to stay on the top */
     position: fixed;
-    top: 50px;
-    left: 50px;
+    top: 20px;
+    right: 20px;
 
     z-index: 1;
 
@@ -132,7 +109,7 @@ p {
     height: 32px;
     position: absolute;
     top: -7px;
-    left: -5px;
+    right: -5px;
 
     cursor: pointer;
 
@@ -145,8 +122,8 @@ p {
 }
 
 /*
-   * Just a quick hamburger
-   */
+  * Just a quick hamburger
+  */
 #menuToggle span {
     display: block;
     width: 33px;
@@ -154,7 +131,7 @@ p {
     margin-bottom: 5px;
     position: relative;
 
-    background: #cdcdcd;
+    background: #847b7b;
     border-radius: 3px;
 
     z-index: 1;
@@ -175,9 +152,9 @@ p {
 }
 
 /* 
-   * Transform all the slices of hamburger
-   * into a crossmark.
-   */
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
 #menuToggle input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
@@ -185,29 +162,31 @@ p {
 }
 
 /*
-   * But let's hide the middle one.
-   */
+  * But let's hide the middle one.
+  */
 #menuToggle input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /*
-   * Ohyeah and the last one should go the other direction
-   */
+  * Ohyeah and the last one should go the other direction
+  */
 #menuToggle input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
 }
 
 /*
-   * Make this absolute positioned
-   * at the top left of the screen
-   */
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
 #menu {
     position: absolute;
+    left: -900%;
+    max-width: 400px;
     width: 100vw;
     max-height: 100vh;
-    margin: -100px 0 0 -50px;
+    margin: -100px -50px 0 0;
     padding: 50px;
     padding-top: 125px;
     box-sizing: border-box;
@@ -217,10 +196,10 @@ p {
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
 
-    transform-origin: 0% 0%;
-    transform: translate(100%, 0);
+    transform-origin: 100% 0%;
+    transform: translate(600%, 0);
 
-    transition: transform 0.5s cubic-bezier(.81,.43,.12,.66);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
 #menu li {
@@ -233,8 +212,92 @@ p {
 }
 
 /*
-   * And let's slide it in from the left
-   */
+  * And let's slide it in from the left
+  */
 #menuToggle input:checked~ul {
     transform: none;
+}
+
+
+.movie__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie__item {
+    /* width: 200px; */
+    width: 90%;
+    text-align: center;
+    background-size: cover;
+    background-size: 100%;
+    transition: background-size 5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.movie__item > h2 {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.movie__item.cover {
+    height: 300px;
+    background-position: center;
+}
+
+.movie__item:hover {
+    background-size: 150%;
+}
+
+.item1 {
+    background-image: url(https://forum.derivative.ca/uploads/default/original/2X/b/bc8c5bdb573c3587dd5ec7a51c47546ea3fe2475.jpeg);
+}
+
+.item3 {
+    background-image: url(https://one-act-play.com/wp-content/uploads/2022/11/screen-shot-2022-11-09-at-9.40.34-pm.png?w=2046);
+}
+
+@media (max-width: 1024px) {
+    main#desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    main#mobile {
+        display: none;
+    }
+    
+    main#desktop {
+        display: block;
+    }
+
+    .movie__item {
+        width: 45%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item1 {
+        order: 1;
+        flex-grow: 2;
+    }
+    .item2 {
+        order: 2;
+    }
+    .item3 {
+        order: 4;
+        flex-grow: 2;
+    }
+    .item4 {
+        order: 3;
+    }
+    .movie__list {
+        gap: 0;
+    }
 }

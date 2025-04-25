@@ -1,21 +1,34 @@
+:root {
+    --primary-color: #845EEB;
+    --secondary-color: #D1ABEB;
+  }
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.5;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  color: var(--primary-color);
 }
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
 .color-box {
     width: 100px;
     height: 100px;
-    margin: 16px;
-    display: inline-block; /* inline-block並排*/
-    border-radius: 8px; /* 圓角 */
+    display: inline-block;
 }
+
 .color-box.primary {
-    background-color: #9F02F5;
+    background-color: var(--primary-color);
 }
+
 .color-box.secondary {
-    background-color: #F5A502;
+    background-color: var(--secondary-color);
 }

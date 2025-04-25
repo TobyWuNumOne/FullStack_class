@@ -1,0 +1,42 @@
+.header__container {
+    display: flex;
+    background-color: lightcoral;
+    padding: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__search-container {
+    flex-grow: 1;
+    display: flex;
+}
+
+.header__search-input {
+    flex-grow: 1;
+}
+
+.movie-categories__list {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.movie-categories__item {
+    padding: 8px;
+    background-color: rgb(242, 35, 35);
+    border-radius: 4px;
+    color: white;
+}
+
+.movie-categories__item--active {
+    color: rgb(242, 35, 35);
+    background-color: white;
+    border: 1px solid rgb(242, 35, 35);
+}
+
+/* NOTE: 這是為了測試用 */
+.placeholder {
+    height: 500px;
+}
