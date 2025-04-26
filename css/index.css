@@ -20,18 +20,6 @@ body {
     font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
-
-
-.logo {
-    width: 10px;
-    height: 10px;
-    padding: 1em;
-    background-image: url("https://www.citypng.com/public/uploads/preview/hd-round-outline-green-tick-mark-symbol-icon-png-701751695051682nfiugbsalz.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
 .navbar {
     display: flex;
     position: relative;
@@ -39,6 +27,17 @@ body {
     padding: 10px 20px;
     padding-right: 70px;
     justify-content: space-between;
+}
+
+.logo {
+    display: -webkit-flex;
+    width: 20%;
+    height: 42px;
+    background-image: url("../image/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    align-items: center;
 }
 
 .search {
@@ -73,9 +72,11 @@ body {
     cursor: pointer;
     font-size: 20px;
 }
+
 search:before {
     content: "\f002";
-    }
+}
+
 /* Menu code starts here */
 
 #menuToggle {
@@ -131,7 +132,7 @@ search:before {
     margin-bottom: 5px;
     position: relative;
 
-    background: #847b7b;
+    background: #ff9041;
     border-radius: 3px;
 
     z-index: 1;
@@ -182,7 +183,7 @@ search:before {
   */
 #menu {
     position: absolute;
-    left: -900%;
+    left: -250px;
     max-width: 400px;
     width: 100vw;
     max-height: 100vh;
@@ -191,7 +192,7 @@ search:before {
     padding-top: 125px;
     box-sizing: border-box;
     overflow-y: auto;
-    background: #ededed;
+    background: #9f9f9f;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
@@ -236,15 +237,24 @@ search:before {
     transition: background-size 5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.movie__item > h2 {
+.movie__item>h2 {
     padding: 8px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
 }
 
+.movie__item.fl {
+
+    width: 100%;
+    overflow: hidden;
+    /*防止h2的top marge造成marge塌陷 */
+    background: linear-gradient(to top, #000 -10%, rgba(0, 0, 0, 0) 90%);
+}
+
 .movie__item.cover {
     height: 300px;
     background-position: center;
+
 }
 
 .movie__item:hover {
@@ -253,23 +263,25 @@ search:before {
 
 .item1 {
     background-image: url(https://forum.derivative.ca/uploads/default/original/2X/b/bc8c5bdb573c3587dd5ec7a51c47546ea3fe2475.jpeg);
+
 }
 
 .item3 {
     background-image: url(https://one-act-play.com/wp-content/uploads/2022/11/screen-shot-2022-11-09-at-9.40.34-pm.png?w=2046);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 899px) {
     main#desktop {
         display: none;
+
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 900px) {
     main#mobile {
         display: none;
     }
-    
+
     main#desktop {
         display: block;
     }
@@ -287,16 +299,20 @@ search:before {
         order: 1;
         flex-grow: 2;
     }
+
     .item2 {
         order: 2;
     }
+
     .item3 {
         order: 4;
         flex-grow: 2;
     }
+
     .item4 {
         order: 3;
     }
+
     .movie__list {
         gap: 0;
     }

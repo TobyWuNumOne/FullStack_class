@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="guideline.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -31,42 +33,39 @@
     <!-- NOTE: 佔位符 -->
     <div class="placeholder"></div>
 
-    <main class="movie__container" id="mobile">
-        <section class="movie__list">
-            <div class="movie__item item1 cover">
-                <h2>有病才會喜歡你</h2>
-            </div>
-            <div class="movie__item item2">
-                <p>影片描述一名總愛闖禍的問題少年葉子杰（詹懷雲飾），即將面臨退學處分，在一次陰錯陽差下發現有病真好，於是決定將計就計當個「裝病仔」。在片中裝病仔詹懷雲使出各種裝病奇招，快速喝完一整排養樂多製造嘔吐假象、化熊貓妝假裝臉色蒼白，到最後甚至走自然路線，直接舉手跟老師說「我不舒服！」躲到保健室睡覺。
+    <!-- TODO: 1. 手機版的時候，電影卡片要 cover 在上，描述在下 -->
+    <!-- TODO: 2. 桌機版的時候，單數的電影卡片要 cover 在左，描述在右 -->
+    <!-- TODO: 3. 桌機版的時候，雙數的電影卡片要 cover 在右，描述在左 -->
+
+    <main class="movie__container">
+
+        <ul class="movie__list">
+
+            <li class="movie__item" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                data-aos-once="true">
+                <div class="movie__item-cover item1">
+                    <h2 class="movie__item-title">有病才會喜歡你</h2>
+                </div>
+                <p class="movie__item-desc">
+                    影片描述一名總愛闖禍的問題少年葉子杰（詹懷雲飾），即將面臨退學處分，在一次陰錯陽差下發現有病真好，於是決定將計就計當個「裝病仔」。在片中裝病仔詹懷雲使出各種裝病奇招，快速喝完一整排養樂多製造嘔吐假象、化熊貓妝假裝臉色蒼白，到最後甚至走自然路線，直接舉手跟老師說「我不舒服！」躲到保健室睡覺。
                 </p>
-            </div>
-            <div class="movie__item item3 cover">
-                <h2>夏日最後的祕密</h2>
-            </div>
-            <div class="movie__item item4">
-                <p>凝視著一張張象徵青春的照片牆不禁出了神，喂！蘇明儀！那個人終於還是來了......</p>
-            </div>
-        </section>
+            </li>
+
+            <li class="movie__item" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                data-aos-once="true">
+                <div class="movie__item-cover item3">
+                    <h2 class="movie__item-title">夏日最後的祕密</h2>
+                </div>
+                <p class="movie__item-desc">凝視著一張張象徵青春的照片牆不禁出了神，喂！蘇明儀！那個人終於還是來了......</p>
+            </li>
+
+        </ul>
+
     </main>
 
-    <main class="movie__container" id="desktop">
-        <section class="movie__list">
-            <div class="movie__item item1 cover">
-                <h2>有病才會喜歡你</h2>
-            </div>
-            <div class="movie__item item2">
-                <p>影片描述一名總愛闖禍的問題少年葉子杰（詹懷雲飾），即將面臨退學處分，在一次陰錯陽差下發現有病真好，於是決定將計就計當個「裝病仔」。在片中裝病仔詹懷雲使出各種裝病奇招，快速喝完一整排養樂多製造嘔吐假象、化熊貓妝假裝臉色蒼白，到最後甚至走自然路線，直接舉手跟老師說「我不舒服！」躲到保健室睡覺。
-                </p>
-            </div>
-            <div class="movie__item item3 cover">
-                <h2>夏日最後的祕密</h2>
-            </div>
-            <div class="movie__item item4">
-                <p>凝視著一張張象徵青春的照片牆不禁出了神，喂！蘇明儀！那個人終於還是來了......</p>
-            </div>
-        </section>
-    </main>
-
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

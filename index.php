@@ -19,8 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     echo "結果: " . $result;
-} 
-else {
+} else {
     echo '
         <form method="POST" action="">
             <label for="num1">數字1:</label>
